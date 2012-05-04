@@ -30,6 +30,7 @@ jQuery ->
     total_cost = 0
     for portion_cost in $(".ingredient_portion_cost:visible")
       total_cost += parseFloat($(portion_cost).html())
+    total_cost = total_cost.toFixed(2)
     $(".recipy_recipe_cost").html(total_cost)
     $("#recipy_recipe_cost").val(total_cost)
     compute_profit()
