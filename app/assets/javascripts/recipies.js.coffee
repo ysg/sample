@@ -8,7 +8,7 @@ jQuery ->
     compute_total_cost()
     event.preventDefault()
 
-  $('#new_recipy').on 'click', '.add_ingridients', (event) ->
+  $('.add_ingridients').live 'click', (event) ->
     time = new Date().getTime()
     regexp = new RegExp($(@).data('id'), "g")
     $('#recipy_ingredients tbody').append($(@).data('fields').replace(regexp,time))
