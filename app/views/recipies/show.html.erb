@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Price on menu:</b>
+  <%= @recipy.price_on_menu %>
+</p>
+
+<p>
+  <b>Recipe cost:</b>
+  <%= @recipy.recipe_cost %>
+</p>
+
+<p>
+  <b>Profit:</b>
+  <%= @recipy.profit %>
+</p>
+
+<p>
+  <b>Food cost:</b>
+  <%= @recipy.food_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_recipy_path(@recipy) %> |
+<%= link_to 'Back', recipies_path %>

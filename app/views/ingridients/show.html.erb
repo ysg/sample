@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ingridient.name %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @ingridient.amount %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @ingridient.unit %>
+</p>
+
+<p>
+  <b>Unit cost:</b>
+  <%= @ingridient.unit_cost %>
+</p>
+
+<p>
+  <b>Portion cost:</b>
+  <%= @ingridient.portion_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_ingridient_path(@ingridient) %> |
+<%= link_to 'Back', ingridients_path %>

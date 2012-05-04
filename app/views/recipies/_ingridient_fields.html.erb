@@ -1,0 +1,16 @@
+
+  <tr>
+    <td><%= f.select(:item_id, (@items.map{ |i| [i.name, i.id, {'data-cost'=>i.unit_cost}] }), {},{:class => "ingredient_name"} )%></td>
+    <td><%= f.text_field :amount, :size =>2, :class => "ingredient_amount", :value => (f.object.amount || "0.0") %></td>
+    <td><%= f.select :unit, ['gram','lb','oz'], {}, {:class => "ingredient_unit"} %></td>
+    <td><span class="ingredient_unit_cost"> <%= compute_unit_cost(f.object) %> </span></td>
+    <td>
+      <span class="ingredient_portion_cost">
+        <%= f.object.portion_cost || "0.0" %>
+      </span>
+      <%= f.hidden_field :portion_cost, :class => "ingredient_portion_cost_hidden" %>
+    </td>
+    <td><%= f.hidden_field :_destroy%></td>
+    <td><%= link_to "remove", "#", :class => "remove_ingredient" %></td>
+
+  </tr>

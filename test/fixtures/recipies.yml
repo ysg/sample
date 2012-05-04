@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  price_on_menu: 1.5
+  recipe_cost: 1.5
+  profit: 1.5
+  food_cost: 1.5
+
+two:
+  price_on_menu: 1.5
+  recipe_cost: 1.5
+  profit: 1.5
+  food_cost: 1.5

@@ -1,0 +1,65 @@
+<%= form_for(@recipy) do |f| %>
+  <% if @recipy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipy.errors.count, "error") %> prohibited this recipy from being saved:</h2>
+
+      <ul>
+      <% @recipy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <table id="recipy">
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+       <td><%= f.label :price_on_menu %></td>
+       <td><%= f.text_field :price_on_menu, :size =>2 %></td>
+    </tr>
+    <tr>
+        <td><%= f.label :recipe_cost %></td>
+        <td>
+          <span class="recipy_recipe_cost"><%= f.object.recipe_cost || "0.0" %></span>
+          <%= f.hidden_field :recipe_cost, :size =>2 %>
+        </td>
+    </tr>
+    <tr>
+        <td><%= f.label :profit %></td>
+        <td>
+          <span class="recipy_profit"><%= f.object.profit || "0.0" %></span>
+          <%= f.hidden_field :profit, :size =>2 %>
+        </td>
+    </tr>
+    <tr>
+        <td><%= f.label :food_cost %></td>
+        <td>
+          <span class="recipy_food_cost"><%= f.object.food_cost || "0.0" %></span> %
+          <%= f.hidden_field :food_cost, :size =>2 %>
+        </td>
+    </tr>
+  </table>
+
+  <%= link_to_add_fields "Add Ingridients", f, :ingridients %>
+  <br/><br/><br/>
+  <table id="recipy_ingredients">
+     <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Unit</th>
+          <th>Unit Cost</th>
+          <th>Portion Cost</th>
+     </tr>
+     <%= f.fields_for :ingridients, @recipy.ingridients do |ing| %>
+        <%= render 'ingridient_fields', f: ing %>
+     <% end %>
+  </table>
+  <br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

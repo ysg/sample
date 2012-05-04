@@ -1,0 +1,31 @@
+<h1>Listing ingridients</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Unit</th>
+    <th>Unit cost</th>
+    <th>Portion cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ingridients.each do |ingridient| %>
+  <tr>
+    <td><%= ingridient.name %></td>
+    <td><%= ingridient.amount %></td>
+    <td><%= ingridient.unit %></td>
+    <td><%= ingridient.unit_cost %></td>
+    <td><%= ingridient.portion_cost %></td>
+    <td><%= link_to 'Show', ingridient %></td>
+    <td><%= link_to 'Edit', edit_ingridient_path(ingridient) %></td>
+    <td><%= link_to 'Destroy', ingridient, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ingridient', new_ingridient_path %>

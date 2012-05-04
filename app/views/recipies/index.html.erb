@@ -1,0 +1,29 @@
+<h1>Listing recipies</h1>
+
+<table>
+  <tr>
+    <th>Price on menu</th>
+    <th>Recipe cost</th>
+    <th>Profit</th>
+    <th>Food cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recipies.each do |recipy| %>
+  <tr>
+    <td><%= recipy.price_on_menu %></td>
+    <td><%= recipy.recipe_cost %></td>
+    <td><%= recipy.profit %></td>
+    <td><%= recipy.food_cost %></td>
+    <td><%= link_to 'Show', recipy %></td>
+    <td><%= link_to 'Edit', edit_recipy_path(recipy) %></td>
+    <td><%= link_to 'Destroy', recipy, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recipy', new_recipy_path %>
