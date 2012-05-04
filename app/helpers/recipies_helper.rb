@@ -1,6 +1,6 @@
 module RecipiesHelper
   def compute_unit_cost(ingridient)
-    return "0.0" unless ingridient.id.present?
+    return Item.first.unit_cost unless ingridient.id.present?
     gram_cost = Item.find(ingridient.item_id).unit_cost
     case ingridient.unit
       when "gram"
