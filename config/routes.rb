@@ -8,6 +8,11 @@ KitchenManagement::Application.routes.draw do
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
   match "/logout", to: "sessions#destroy", :as => "logout"
+  match "/login", to: "sessions#new", :as => "login"
+  match "/register", to: "identities#new", :as => "register"
+
+  resources :identities, only: [:new]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

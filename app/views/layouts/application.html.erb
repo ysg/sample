@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<% if current_user %>
+    Welcome <%= current_user.display_name %> | 
+    <%= link_to "Logout", logout_path %>
+<% end %>
+<div style="float:left">
+    <%= yield %>
+</div>
+<% unless current_user %>
+    <div style="float:left;padding-left: 50px;">
+      <%= render "sessions/form" %>
+    </div>
+<% end %>
 
 </body>
 </html>

@@ -17,6 +17,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', :git => 'git://github.com/rweng/jquery-datatables-rails.git'
+  gem 'jquery-ui-rails'
 end
 
 group :development do
@@ -27,9 +28,11 @@ group :production do
 end
 
 gem 'jquery-rails'
+gem 'will_paginate'
+gem 'omniauth-identity'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
