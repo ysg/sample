@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :check_for_cancel, :only => [:create, :update]
+
   # GET /items
   # GET /items.json
   def index
@@ -78,6 +80,12 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to items_url }
       format.json { head :no_content }
+    end
+  end
+
+  def check_for_cancel
+    if params[:commit] == "Cancel"
+      redirect_to recipies_path
     end
   end
 end
