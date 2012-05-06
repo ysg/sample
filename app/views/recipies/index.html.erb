@@ -6,13 +6,11 @@
     <th>Recipe cost</th>
     <th>Profit</th>
     <th>Food cost</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3"></th>
   </tr>
 
 <% @recipies.each do |recipy| %>
-  <tr>
+  <tr class="<%= cycle("","zebra_stripe")%>">
     <td><%= recipy.price_on_menu %></td>
     <td><%= recipy.recipe_cost %></td>
     <td><%= recipy.profit %></td>
@@ -25,7 +23,8 @@
 </table>
 
 <br />
-
-<%= link_to 'New Recipy', new_recipy_path %> |
-<%= link_to 'New Item', new_item_path %>
+<div class="link_to_button">
+  <%= button_to 'Create New Recipe', new_recipy_path, { :method => "get", :class =>"edit_button"} %>
+  <%= button_to 'Create New Item', new_item_path, { :method => "get", :class =>"edit_button"} %>
+</div>
 

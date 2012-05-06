@@ -8,7 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require dataTables/jquery.dataTables.bootstrap
+ *= require dataTables/jquery.dataTables
  *= require_self
  *= require_tree .
 */
+
+table{border-collapse:collapse}
+th{ min-width: 125px;background:#003366;color: #FFFFFF;}
+tr{ text-align: center}
+
+.link_to_button form.button_to{min-width: 55px; padding:5px; float:left;}
+.link_to_button{clear: both;}
+
