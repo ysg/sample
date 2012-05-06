@@ -1,5 +1,5 @@
 
-  <tr>
+  <tr class="<%= cycle("zebra_stripe","")%>">
     <td><%= f.select(:item_id, (@items.map{ |i| [i.name, i.id, {'data-cost'=>i.unit_cost}] }), {},{:class => "ingredient_name"} )%></td>
     <td><%= f.text_field :amount, :size =>2, :class => "ingredient_amount", :value => (f.object.amount || "0.0") %></td>
     <td><%= f.select :unit, ['gram','lb','oz'], {}, {:class => "ingredient_unit"} %></td>

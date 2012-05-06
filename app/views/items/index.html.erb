@@ -4,13 +4,11 @@
   <tr>
     <th>Name</th>
     <th>Unit cost</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3"></th>
   </tr>
 
 <% @items.each do |item| %>
-  <tr>
+  <tr class="<%= cycle("","zebra_stripe")%>">
     <td><%= item.name %></td>
     <td><%= item.unit_cost %></td>
     <td><%= link_to 'Show', item %></td>

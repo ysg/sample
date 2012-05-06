@@ -11,7 +11,11 @@ jQuery ->
   $('.add_ingridients').live 'click', (event) ->
     time = new Date().getTime()
     regexp = new RegExp($(@).data('id'), "g")
-    $('#recipy_ingredients tbody').append($(@).data('fields').replace(regexp,time))
+    content = $(@).data('fields').replace(regexp,time)
+    if $("#recipy_ingredients tr:last").hasClass("zebra_stripe")
+      $('#recipy_ingredients tbody').append(content.replace("zebra_stripe",""))
+    else
+      $('#recipy_ingredients tbody').append(content)
     event.preventDefault()
 
 ############## - Cost Calculation Logic - #############

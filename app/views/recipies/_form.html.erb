@@ -14,10 +14,6 @@
 
   <table id="recipy">
     <tr>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
        <td><%= f.label :price_on_menu %></td>
        <td><%= f.text_field :price_on_menu, :size =>2 %></td>
     </tr>
@@ -52,7 +48,8 @@
           <th>Amount</th>
           <th>Unit</th>
           <th>Unit Cost</th>
-          <th>Portion Cost</th>
+          <th colspan="2">Portion Cost</th>
+          <th></th>
      </tr>
      <%= f.fields_for :ingridients, @recipy.ingridients do |ing| %>
         <%= render 'ingridient_fields', f: ing %>

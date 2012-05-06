@@ -1,25 +1,47 @@
 <p id="notice"><%= notice %></p>
+<h1>Recipe Details</h1>
 
-<p>
-  <b>Price on menu:</b>
-  <%= @recipy.price_on_menu %>
-</p>
+<table id="recipy">
+    <tr>
+       <td>Price on menu:</td>
+       <td><%= @recipy.price_on_menu %></td>
+    </tr>
+    <tr>
+        <td>Recipe cost:</td>
+        <td><%= @recipy.recipe_cost %></td>
+    </tr>
+    <tr>
+        <td>Profit:</td>
+        <td><%= @recipy.profit %></td>
+    </tr>
+    <tr>
+        <td>Food cost:</td>
+        <td><%= @recipy.food_cost %> % </td>
+    </tr>
+</table>
 
-<p>
-  <b>Recipe cost:</b>
-  <%= @recipy.recipe_cost %>
-</p>
+<br/><br/><br/>
+<table id="recipy_ingredients">
+ <tr>
+  <th>Name</th>
+  <th>Amount</th>
+  <th>Unit</th>
+  <th>Unit Cost</th>
+  <th>Portion Cost</th>
+ </tr>
+ <% @recipy.ingridients.each do |ing| %>
+    <tr class="<%= cycle("", "zebra_stripe")%>">
+      <td><%= Item.find(ing.item_id).name %></td>
+      <td><%= ing.amount %></td>
+      <td><%= ing.unit %></td>
+      <td><%= Item.find(ing.item_id).unit_cost %></td>
+      <td><%= ing.portion_cost %></td>
+    </tr>
+ <% end %>
+</table>
 
-<p>
-  <b>Profit:</b>
-  <%= @recipy.profit %>
-</p>
-
-<p>
-  <b>Food cost:</b>
-  <%= @recipy.food_cost %>
-</p>
-
-
-<%= link_to 'Edit', edit_recipy_path(@recipy) %> |
-<%= link_to 'Back', recipies_path %>
+<br/><br/>
+<div class="link_to_button">
+  <%= button_to 'Edit', edit_recipy_path(@recipy), { :method => "get", :class =>"edit_button"} %>
+  <%= button_to 'Back', recipies_path, { :method => "get", :class =>"edit_button"} %>
+</div>
