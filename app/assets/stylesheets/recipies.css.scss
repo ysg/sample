@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#recipy_ingredients th, #recipy th{ min-width: 100px;}
-#recipy_ingredients tr{ text-align: center} 
+.zebra_stripe{background:#DDDDDD;}
+
+#recipy td{min-width:95px;text-align:left;padding: 3px 5px; font-weight: bold;}
+
+#recipy_ingredients input {width:95%;}
+#recipy_ingredients select {width:100%;}
+
 .add_ingridients{margin-left: 560px;font-size: 130%;font-weight: bold;}
