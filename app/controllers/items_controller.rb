@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :check_for_cancel, :only => [:create, :update]
+  before_filter :login_required, :except => [:index, :show]
 
   # GET /items
   # GET /items.json
