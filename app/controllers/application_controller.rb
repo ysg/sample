@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     if current_user
       return true
     end
-    session[:return_to]=request.request_uri
+    session[:return_to]=request.env["REQUEST_URI"]
     redirect_to login_path, alert: "Please login to continue."
     return false
   end
