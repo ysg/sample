@@ -5,6 +5,10 @@ KitchenManagement::Application.routes.draw do
 
   resources :recipies
 
+  match "/auth/:provider/callback", to: "sessions#create"
+  match "/auth/failure", to: "sessions#failure"
+  match "/logout", to: "sessions#destroy", :as => "logout"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
