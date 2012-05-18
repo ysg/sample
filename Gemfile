@@ -22,9 +22,18 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'libnotify'
 end
 group :production do
   gem 'pg'
+end
+gem "rspec-rails", :group => [:test, :development]
+group :test do
+  gem "factory_girl_rails"
+  gem "launchy"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "guard-rspec"
 end
 
 gem 'jquery-rails'
@@ -45,6 +54,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-#gem 'ruby-debug19', :require => 'ruby-debug'
-#gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-head/gems/linecache19-0.5.13/"
-#gem 'ruby-debug-base19', '0.11.26', :path => "~/.rvm/gems/ruby-1.9.3-head/gems/ruby-debug-base19-0.11.26/"
+gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'linecache19', '0.5.13', :path => "~/.rvm/gems/ruby-1.9.3-head/gems/linecache19-0.5.13/"
+gem 'ruby-debug-base19', '0.11.26', :path => "~/.rvm/gems/ruby-1.9.3-head/gems/ruby-debug-base19-0.11.26/"
