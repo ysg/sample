@@ -14,8 +14,16 @@ describe "Create recipes" do
     visit(root_path)
     click_button('Create New Recipe')
     current_path.should == login_path
+
+    #@identity = Factory(:identity)
+    #@user = Factory(:user, :provider => "identity", :uid => @identity.id, :display_name => @identity.name)
+    #fill_in('auth_key', :with => 'test+1@gmail.com')
+    #fill_in('password', :with => 'jjjjjj')
+    #click_button 'Login'
+
     click_link 'register'
     fill_registration_form
+
     current_path.should == new_recipy_path
     Recipy.count.should eq(0)
   end
@@ -136,6 +144,20 @@ end
 
 describe "Edit recipes" do
   before do
+    #4.times{Factory(:item)}
+    #@recipy = Recipy.create(:price_on_menu=>600, :recipe_cost=>500, :profit=>100, :food_cost=>83.33)
+    #4.times do |i|
+    #  amount = 5*(i+1)
+    #  portion_cost = amount * (Item.all[i].unit_cost)
+    #  Ingridient.create(:recipy_id => @recipy.id, :item_id => (i+1), :amount => amount, :unit => "gram", :portion_cost => portion_cost )
+    #end
+    #@identity = Factory(:identity)
+    #@user = Factory(:user, :provider => "identity", :uid => @identity.id, :display_name => @identity.name)
+    #visit(login_path)
+    #fill_in('auth_key', :with => 'test+1@gmail.com')
+    #fill_in('password', :with => 'jjjjjj')
+    #click_button 'Login'
+
     Factory(:item)
     Factory(:item)
     Factory(:item)

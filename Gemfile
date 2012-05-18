@@ -33,6 +33,7 @@ group :test do
   gem "launchy"
   gem "capybara"
   gem "database_cleaner"
+  gem "shoulda"
   gem "guard-rspec"
 end
 
